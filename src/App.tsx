@@ -35,6 +35,12 @@ const LETTERS: LetterModel[] = [
   { name: "ياء", value:'ي' },
 ];
 
+function useCallback() {
+  const a = "testA";
+  const b = "testB";
+  return {a, b}
+}
+
 function App() {
 
   const [letters, setLetters] = useState<LetterModel[]>([]);

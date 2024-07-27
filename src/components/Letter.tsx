@@ -1,5 +1,3 @@
-import {LetterModel} from '../models';
-
 import './Letter.css';
 
 interface Props {
@@ -8,8 +6,15 @@ interface Props {
   isActivated: boolean;
 }
 
+function useParser(text: string) {
+  const [cityString, yearString] = text.split("_");
+  return [cityString, yearString];
+}
 
 export const Letter = function (props: Props) {
+
+  const [city, year] = useParser("Moscow_2024");
+  console.log({city, year});
 
   return (
     <div className={"letter " + (props.isActivated ? 'activated' : '')} onClick={() => props.onActivate(props.letter)}>
